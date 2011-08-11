@@ -13,8 +13,8 @@
     function translatePage(lang) {
       redir_url = "http://translate.google.com/translate?";
       redir_url += "sl=auto&tl=" + lang + "&u=";
-      redir_url += escape("http://balcom.github.com/gt.html");
-      window.location = redir_url;
+      redir_url += encodeURI("http://balcom.github.com/gt.html");
+      top.location = redir_url;
     }
     
     $(document).ready(function(){
