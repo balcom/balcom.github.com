@@ -21,7 +21,7 @@
       
       $("form#translate").change(function() {
         from_lang = "en";
-        to_lang = $("form#translate select option:selected").value();
+        to_lang = $("form#translate select option:selected").attr('value');
       });
       
     });
