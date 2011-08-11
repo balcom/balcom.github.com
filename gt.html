@@ -10,9 +10,9 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   <script type="text/javascript">
   
-    function translatePage(from,to,url) {
-      redir_url = "http://translate.google.com/translate?hl=";
-      redir_url += from + "&sl=auto&tl=" + to + "&u=";
+    function translatePage(lang) {
+      redir_url = "http://translate.google.com/translate?";
+      redir_url += "sl=auto&tl=" + lang + "&u=";
       redir_url += escape(window.location);
       window.location = redir_url;
     }
@@ -20,8 +20,8 @@
     $(document).ready(function(){
       
       $("form#translate").change(function() {
-        from_lang = "en";
-        to_lang = $("form#translate select option:selected").attr('value');
+        lang = $("form#translate select option:selected").attr('value');
+        translatePage(lang);
       });
       
     });
